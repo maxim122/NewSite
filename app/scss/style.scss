@@ -36,11 +36,6 @@ $white: #ffffff;
         background: rgb(233, 130, 130);
     } 
 }
-@font-face {
-     font-family: "Freestyle Script";
-     src: url("../fonts/10036.ttf");
-     src: url("../fonts/FreestyleScript.otf");
-}
 html, body {
     height: 100%;
 }
@@ -136,6 +131,13 @@ li {
 a {
     text-decoration: none;
 }
+// fonts
+@font-face {
+     font-family: "Freestyle Script";
+     src: url("../fonts/10036.ttf");
+     src: url("../fonts/FreestyleScript.otf");
+}
+
 h1 {
     font-size: 67px;
     color: $white;
