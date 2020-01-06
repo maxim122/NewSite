@@ -1961,6 +1961,11 @@ section.shop {
               section.shop {
                   .container {
                       .row {
+                        .column-shop {
+                            &:last-child {
+                                margin-top: 0!important;
+                            }
+                        }
                         .owl-item {
                             .column-comment {
                                 height: 240px!important;
@@ -1978,9 +1983,9 @@ section.shop {
                                 }
                             }
                         } 
-                      }
-                  } 
-              }
+                    }
+                } 
+            }
               footer {
                 height: 335px;
                 padding: 20px 0 0 0;
@@ -2004,8 +2009,8 @@ section.shop {
                         }
                     }
                 }
-              }
+            }
               .copyright {
                   height: 60px;
-              }
-        }
+                }
+            }
