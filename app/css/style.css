@@ -1847,6 +1847,9 @@ footer .row .footer-website .contact .contact__item:last-child::before {
   section.improvement .fon .container .row:last-child .column-improvement:last-child {
     display: none !important;
   }
+  section.shop .container .row .column-shop:last-child {
+    margin-top: 0 !important;
+  }
   section.shop .container .row .owl-item .column-comment {
     height: 240px !important;
     flex-direction: column;
