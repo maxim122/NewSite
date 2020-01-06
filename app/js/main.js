@@ -2,40 +2,20 @@
 $(".header__burger").click(function(){
     $(".header__burger, .menu__list").toggleClass("active");
   }) ;
-//   $(document).ready(function(){
-//     $('.menu__list .menu__item .menu__link').each(function () {
-//             var location = window.location.href;
-//             var link = this.href; 
-//             if(location == link) {
-//                 $(this).addClass('active__link');
-//             }
-//         });
-//     });
-// $(function () {
-//     var location = window.location.href;
-//     var cur_url = '/' + location.split('/').pop();
- 
-//     $('.menu__list .menu__item').each(function () {
-//         var link = $(this).find('a').attr('href');
- 
-//         if (cur_url == link) {
-//             $(this).addClass('active__link');
-//         }
-//     });
-// });
- 
+
+// color active link
+var nav = $(".menu .menu__item .menu__link");
+nav.click(function() {
+    nav.removeClass("active__link");
+    $(this).addClass('active__link');
+});
+
+ // transition link
 $(document).ready(function(){
 	$(".menu").on("click",".menu__link", function (event) {
-		//отменяем стандартную обработку нажатия по ссылке
 		event.preventDefault();
-
-		//забираем идентификатор бока с атрибута href
 		var id  = $(this).attr('href'),
-
-		//узнаем высоту от начала страницы до блока на который ссылается якорь
 			top = $(id).offset().top;
-		
-		//анимируем переход на расстояние - top за 1500 мс
 		$('body,html').animate({scrollTop: top}, 500);
 	});
 });
@@ -47,6 +27,7 @@ $(document).ready(function(){
           margin: 10,
           nav: true,
           items: 1,
+          autoplay: true,
           navText: [
               '<span class="arrow-owl arrow-left"><i class="fas fa-chevron-left"></i></span>',
               '<span class="arrow-owl arrow-right"><i class="fas fa-chevron-right"></i></span>'
