@@ -1,7 +1,8 @@
 @charset "UTF-8";
-header {
-  height: 200px;
-  background: red;
+@font-face {
+  font-family: "Freestyle Script";
+  src: url("../fonts/10036.ttf");
+  src: url("../fonts/FreestyleScript.otf");
 }
 
 * {
@@ -13,12 +14,6 @@ header {
 
 *::selection {
   background: #e98282;
-}
-
-@font-face {
-  font-family: "Freestyle Script";
-  src: url("../fonts/10036.ttf");
-  src: url("../fonts/FreestyleScript.otf");
 }
 
 html, body {
@@ -187,11 +182,6 @@ header .container .menu {
   width: 100%;
 }
 
-header .container .menu .active__link {
-  color: #5363db;
-  background-color: red;
-}
-
 header .container .menu .menu__list {
   display: flex;
   align-items: center;
@@ -200,13 +190,22 @@ header .container .menu .menu__list {
 header .container .menu .menu__list .menu__link {
   font-size: 14px;
   color: #555555;
-  margin-left: 15px;
-  margin-right: 15px;
+  margin: 0 15px;
   position: relative;
 }
 
-header .container .menu .menu__list .menu__link:active {
-  background-color: red;
+header .container .menu .menu__list .active__link {
+  color: #5363db !important;
+}
+
+header .container .menu .menu__list .active__link::after {
+  content: "";
+  width: 30px;
+  display: block;
+  border-bottom: 1px solid #5363db;
+  position: absolute;
+  bottom: -5px;
+  left: 30%;
 }
 
 header .container .menu .menu__list-mob {
@@ -667,8 +666,9 @@ section.improvement-tablet {
 }
 
 section.shop {
-  padding-bottom: 200px;
   margin-top: 100px;
+  padding-bottom: 200px;
+  position: relative;
 }
 
 section.shop .row {
@@ -785,17 +785,26 @@ section.shop .row .owl-dots {
 
 section.shop .row .owl-dots .active {
   border: 1px solid #5363db;
-  padding: 6px;
+  padding: 5px;
   border-radius: 50%;
   background-color: none;
 }
 
 section.shop .row .owl-dots .active span {
-  margin: 3px 3px;
-  border: 1px solid #5363db;
-  background-color: #5363db;
+  margin: 2px 2px;
+  border: none;
+  background-color: #5363db !important;
   display: block;
   border-radius: 50%;
+}
+
+section.shop .row .owl-dots .owl-dot {
+  margin: 0 5px;
+}
+
+section.shop .row .owl-dots .owl-dot span {
+  background: #d7d7d7;
+  margin: 2px 2px;
 }
 
 section.shop .row .owl-item {
@@ -1542,8 +1551,8 @@ footer .row .footer-website .contact .contact__item:last-child::before {
   }
   section.shop .row .column-shop {
     height: 320px;
-    margin-left: 0px;
-    margin-right: 0;
+    margin-left: 7px;
+    margin-right: 7px;
     margin-bottom: 15px;
   }
   section.shop .row .column-shop .price .price__title::before {
