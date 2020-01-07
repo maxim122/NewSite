@@ -4,19 +4,25 @@ $(".header__burger").click(function(){
   }) ;
 
 // color active link
-var nav = $(".menu .menu__item .menu__link");
+var nav = $(".menu__item .menu__link");
 nav.click(function() {
     nav.removeClass("active__link");
     $(this).addClass('active__link');
 });
+// nav.on('click', function(event) {
+//   event.preventDefault();
+//   this = 
+// });
 
  // transition link
 $(document).ready(function(){
 	$(".menu").on("click",".menu__link", function (event) {
 		event.preventDefault();
 		var id  = $(this).attr('href'),
-			top = $(id).offset().top;
-		$('body,html').animate({scrollTop: top}, 500);
+      top = $(id).offset().top;
+      console.log(top);
+    $('body,html').animate({scrollTop: top}, 500);
+    
 	});
 });
 
@@ -53,6 +59,7 @@ $(document).ready(function(){
                                             $(".zoom").css("transition", "1s ease-out 0.5s");
                                             // $(".program").css("pointer-events", "none");
     });
+
     $(".close").click(function() {
       $(".close").css("display", "none");
       $(".zoom").remove();
