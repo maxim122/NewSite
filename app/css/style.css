@@ -1,10 +1,4 @@
 @charset "UTF-8";
-@font-face {
-  font-family: "Freestyle Script";
-  src: url("../fonts/10036.ttf");
-  src: url("../fonts/FreestyleScript.otf");
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -116,6 +110,12 @@ a {
   text-decoration: none;
 }
 
+@font-face {
+  font-family: "Freestyle Script";
+  src: url("../fonts/10036.ttf");
+  src: url("../fonts/FreestyleScript.otf");
+}
+
 h1 {
   font-size: 67px;
   color: #ffffff;
@@ -187,7 +187,13 @@ header .container .menu .menu__list {
   align-items: center;
 }
 
-header .container .menu .menu__list .menu__link {
+header .container .menu .menu__list .menu__item {
+  display: flex;
+  justify-content: center;
+}
+
+header .container .menu .menu__list .menu__item .menu__link {
+  display: block;
   font-size: 14px;
   color: #555555;
   margin: 0 15px;
@@ -200,12 +206,12 @@ header .container .menu .menu__list .active__link {
 
 header .container .menu .menu__list .active__link::after {
   content: "";
-  width: 30px;
   display: block;
+  width: 70%;
   border-bottom: 1px solid #5363db;
   position: absolute;
   bottom: -5px;
-  left: 30%;
+  left: 15%;
 }
 
 header .container .menu .menu__list-mob {
@@ -498,6 +504,7 @@ section.program .container-fluid .row {
 section.program .container-fluid .row .training__thumbnails {
   height: 350px;
   position: relative;
+  background-color: rgba(83, 99, 219, 0.8);
 }
 
 section.program .container-fluid .row .training__thumbnails:hover {
@@ -523,7 +530,7 @@ section.program .container-fluid .row .training__thumbnails .large__img {
   left: 0;
   right: 0;
   background-color: rgba(83, 99, 219, 0.8);
-  transition: 2s ease-in-out;
+  transition: opacity .3s ease;
 }
 
 section.program .container-fluid .row .training__thumbnails .large__img .circle {
