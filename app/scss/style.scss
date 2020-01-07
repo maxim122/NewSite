@@ -1,6 +1,4 @@
 
-
-
 // mixin
 @mixin fon-blue {
     background-color: rgba($blue, 0.8);
@@ -124,20 +122,19 @@ html, body {
     max-width: 100%;
   }
 
-  
 li {
     list-style: none;
 }
 a {
     text-decoration: none;
 }
-// fonts
-@font-face {
-     font-family: "Freestyle Script";
-     src: url("../fonts/10036.ttf");
-     src: url("../fonts/FreestyleScript.otf");
-}
 
+//fonts
+@font-face {
+    font-family: "Freestyle Script";
+    src: url("../fonts/10036.ttf");
+    src: url("../fonts/FreestyleScript.otf");
+}
 h1 {
     font-size: 67px;
     color: $white;
@@ -196,22 +193,27 @@ header {
             .menu__list {
                 display: flex;
                 align-items: center;
-                .menu__link {
-                    font-size: 14px;
-                    color: $grey;
-                    margin: 0 15px;
-                    position: relative;
+                .menu__item { 
+                    display: flex;
+                    justify-content: center;
+                    .menu__link {
+                        display: block;
+                        font-size: 14px;
+                        color: $grey;
+                        margin: 0 15px;
+                        position: relative;
+                    }
                 }
                 .active__link {
                     color: $blue!important;
                     &::after {
                         content: "";
-                        width: 30px;
                         display: block;
+                        width: 70%;
                         border-bottom: 1px solid $blue;
                         position: absolute;
                         bottom: -5px;
-                        left: 30%;
+                        left: 15%;
                     }
                 }
             }
@@ -471,7 +473,9 @@ section.program {
                 height: 350px;
                 // flex-grow: 1;
                 position: relative;
+                background-color: rgba($blue, 0.8);
                 &:hover {
+                    
                     cursor: pointer;
                     .large__img {
                         display: flex;
@@ -491,8 +495,7 @@ section.program {
                     left: 0;
                     right: 0;
                     background-color: rgba($blue, 0.8);
-                    
-                    transition: 2s ease-in-out;
+                    transition: opacity .3s ease;
                     .circle {
                         width: 57px;
                         height: 57px;
@@ -1514,9 +1517,9 @@ section.shop {
                     .zoom-container {
                         .zoom {
                             width: 70%;
-                        height: 36%;
-                        top: 22%;
-                        left: 13.7%;
+                            height: 36%;
+                            top: 22%;
+                            left: 13.7%;
                         }
                     }
                     .close  {
